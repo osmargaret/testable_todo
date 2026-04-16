@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Margaret Samuel – Profile Card</title>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      background: linear-gradient(135deg,#0b3d3a,#2e8b57);
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem 1rem;
+    }
+
+    .profile-card{
+      max-width:900px;
+      width:100%;
+      background:#fff;
+      border-radius:2rem;
+      box-shadow:0 25px 45px rgba(0,0,0,0.2);
+      overflow:hidden;
+    }
+
+    .card-inner{padding:2rem;}
+
+    .profile-layout{
+      display:flex;
+      flex-wrap:wrap;
+      gap:2rem;
+      align-items:flex-start;
+    }
+
+    .avatar-col{
+      flex:0 0 150px;
+      text-align:center;
+    }
+
+    .avatar-figure{
+      border-radius:50%;
+      overflow:hidden;
+      width:150px;
+      height:150px;
+      border:3px solid #fff;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .avatar-img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .content-col{flex:1;}
+
+    h2{
+      font-size:1.8rem;
+      margin-bottom:0.5rem;
+      color:#0d5c4b;
+    }
+
+    .bio{
+      font-size:0.95rem;
+      margin-bottom:1rem;
+      border-left:3px solid #2e8b57;
+      padding-left:1rem;
+    }
+
+    .timestamp{
+      background:#eef5f2;
+      display:inline-block;
+      padding:0.5rem 1rem;
+      border-radius:20px;
+      font-size:0.85rem;
+      margin-bottom:1rem;
+    }
+
+    .social-list{
+      display:flex;
+      gap:1rem;
+      flex-wrap:wrap;
+      list-style:none;
+      margin-top:1rem;
+    }
+
+    .social-link{
+      background:#eef5f2;
+      padding:0.5rem 1rem;
+      border-radius:20px;
+      text-decoration:none;
+      color:#1e3a3a;
+      font-size:0.85rem;
+      font-weight:600;
+    }
+
+    .preferences{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+      margin-top:1.5rem;
+    }
+
+    .pref-card{
+      background:#fff;
+      padding:1rem;
+      border-radius:1rem;
+      box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .pref-card h3{
+      margin-bottom:0.5rem;
+      color:#0d5c4b;
+    }
+
+    .pref-list{
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.5rem;
+    }
+
+    .pref-item{
+      background:#eef5f2;
+      padding:0.4rem 0.8rem;
+      border-radius:20px;
+      font-size:0.8rem;
+    }
+
+    @media(max-width:700px){
+      .profile-layout{flex-direction:column;align-items:center;text-align:center;}
+      .preferences{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="profile-card">
+  <div class="card-inner">
+    <div class="profile-layout">
+
+      <!-- IMAGE -->
+      <div class="avatar-col">
+        <div class="avatar-figure">
+          <img class="avatar-img" src="photo.jpg" alt="Margaret Samuel">
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content-col">
+        <h2>Margaret Samuel</h2>
+
+        <p class="bio">
+          Full-stack developer, technical writer, and open-source advocate. 
+          I build accessible and responsive mobile apps, web applications and love turning complex ideas into simple, elegant solutions.
+        </p>
+
+        <div class="timestamp">
+          🕒 <span id="time">--</span>
+        </div>
+
+        <ul class="social-list">
+          <li><a href="https://x.com/margaretsamuel" target="_blank" class="social-link">🐦 X</a></li>
+          <li><a href="https://github.com/osmargaret" target="_blank" class="social-link">💻 GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/margaret-samuel-176a3b117/" target="_blank" class="social-link">🔗 LinkedIn</a></li>
+        </ul>
+
+        <div class="preferences">
+
+          <div class="pref-card">
+            <h3>✨ Hobbies</h3>
+            <ul class="pref-list">
+              <li class="pref-item">Writing</li>
+              <li class="pref-item">Coding</li>
+              <li class="pref-item">Singing</li>
+              <li class="pref-item">Cooking</li>
+            </ul>
+          </div>
+
+          <div class="pref-card">
+            <h3>🚫 Dislikes</h3>
+            <ul class="pref-list">
+              <li class="pref-item">Long queues</li>
+              <li class="pref-item">Unprofitable talks</li>
+              <li class="pref-item">Sentiments</li>
+              <li class="pref-item">Filthiness</li>
+              <li class="pref-item">Mouth odour</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function updateTime(){
+  const now = new Date();
+  document.getElementById("time").innerText = now.toLocaleString();
+}
+setInterval(updateTime,1000);
+updateTime();
+</script>
+
+</body>
+</html>
